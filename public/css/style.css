@@ -1,0 +1,144 @@
+/*
+    Css for login.html file
+ */
+body {
+    margin: 0;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background: transparent linear-gradient(180deg, #150DE9E0 0%, #66717B 100%) 0% 0% no-repeat padding-box;;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 50%;
+    text-align: center;
+}
+
+.login-container {
+    width: 50%;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 40vh;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 41px;
+    opacity: 0.88;
+}
+
+button {
+    border: none;
+    color: white;
+    margin: 1em;
+    width: 40%;
+    line-height: 2em;
+    height: 6vh;
+    background: #5558AA 0% 0% no-repeat padding-box;
+    border-radius: 26px;
+    opacity: 0.88;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    padding: 1em;
+    margin: 1em;
+    width: 50%;
+    letter-spacing: 0px;
+    color: #707070;
+    opacity: 1;
+    border-bottom: 1px solid #707070;
+}
+
+a {
+    text-align: left;
+    font: normal normal normal 15px/20px Segoe UI;
+    letter-spacing: 0px;
+    color: #707070;
+}
+
+@media only screen and (max-device-width: 420px) {
+    .container {
+        flex-direction: column;
+    }
+
+    * {
+        font-size: 36px;
+    }
+
+    .login-container, .logo {
+        width: 100%;
+    }
+
+    form {
+        margin: auto;
+        height: 35vh;
+    }
+
+    img {
+        height: 7em;
+        margin: 2em;
+    }
+}
+/*
+    Css for registration.html file
+ */
+
+.registration-container {
+    width: 50%;
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 70vh;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 41px;
+    opacity: 0.88;
+
+}
+/*
+    TODO: solve the problem with inline alignment of checkbox and text
+ */
+.checkbox {
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: inherit;
+}
+
+button {
+    border: none;
+    color: white;
+    margin: 1em;
+    width: 40%;
+    line-height: 2em;
+    height: 6vh;
+    background: #5558AA 0% 0% no-repeat padding-box;
+    border-radius: 26px;
+    opacity: 0.88;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    padding: 1em;
+    margin: 1em;
+    width: 50%;
+    letter-spacing: 0px;
+    color: #707070;
+    opacity: 1;
+    border-bottom: 1px solid #707070;
+}
