@@ -220,7 +220,7 @@ li {
  TODO: inline columns in navigation menu
  */
 
-.dashboard-menu .fa,
+.dashboard-menu  .fa,
 .dashboard-menu .fas {
     width: 1em;
 }
@@ -282,4 +282,13 @@ header {
 .search-icon {
     position: absolute;
     left: 1em;
+}
+
+.visits-header {
+    text-align: left;
+    font: normal normal normal 25px/33px Segoe UI;
+    letter-spacing: 0.72px;
+    color: #0E0B0B;
+    text-transform: uppercase;
+    border-bottom: transparent;
 }
