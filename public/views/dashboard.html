@@ -1,133 +1,21 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <link rel="stylesheet" type="text/css" href="../css/dashboard-visits.css">
-    <script src="https://kit.fontawesome.com/f83d14d316.js" crossorigin="anonymous"></script>
-    <title>Dashboard page</title>
+    <title>Login page</title>
 </head>
 
 <body>
-    <div class="dashboard-container">
-        <nav>
-            <img src="../img/logo.svg">
-            <ul class="dashboard-menu">
-                <li>
-                    <i class="fa-solid fa-user-group"></i>
-                    <a href="#" class="button">relatives</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-calendar-check"></i>
-                    <a href="#" class="button">calendar</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-bell"></i>
-                    <a href="#" class="button">notifications</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-message"></i>
-                    <a href="#" class="button">messages</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-gear"></i>
-                    <a href="#" class="button">settings</a>
-                </li>
-            </ul>
-        </nav>
-        <main>
-            <header>
-                <div class="search-bar">
-                    <form class="search-form">
-                        <div class="search-input-wrapper">
-                            <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                            <input type="text" class="search-input" placeholder="Search relatives">
-                        </div>
-                    </form>
-                </div>
-                <div class="add-relatives">
-                    <i class="fa-sharp fa-solid fa-plus"></i>
-                    add relatives
-                </div>
-            </header>
-            <header class="visits-header">
-                NEXT PLANNED VISITS
-            </header>
-            <section class="relatives">
-                <div id="relative-2">
-                    <div>
-                        <h3>To visit in Month</h3>
-                    </div>
-                    <img src="../img/uploads/avatar.png">
-                    <div>
-                        <h2>
-                            Name surname
-                        </h2>
-                        <ul>
-                            <li>
-                                <i class="fa-solid fa-star"></i>
-                                <span>Date of birth</span>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-cross"></i>
-                                <span>Date of Death</span>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-location-dot"></i>
-                                <span>Location</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div id="relative-3">
-                    <div>
-                        <h3>To visit in Month</h3>
-                    </div>
-                    <img src="../img/uploads/avatar.png">
-                    <div>
-                        <h2>
-                            Name surname
-                        </h2>
-                        <ul>
-                            <li>
-                                <i class="fa-solid fa-star"></i>
-                                <span>Date of birth</span>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-cross"></i>
-                                <span>Date of Death</span>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-location-dot"></i>
-                                <span>Location</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div id="relative-1">
-                    <div>
-                        <h3>To visit in Month</h3>
-                    </div>
-                    <img src="../img/uploads/avatar.png">
-                    <div>
-                        <h2>
-                            Name surname
-                        </h2>
-                        <ul>
-                            <li>
-                                <i class="fa-solid fa-star"></i>
-                                <span>Date of birth</span>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-cross"></i>
-                                <span>Date of Death</span>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-location-dot"></i>
-                                <span>Location</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-        </main>
+<div class="container">
+    <div class="logo">
+        <img src="../img/logo.svg">
     </div>
+    <div class="login-container">
+        <form class="login-form">
+            <input name="email" type="text" placeholder="email@email.com">
+            <input name="password" type="password" placeholder="password">
+            <button>login</button>
+            <a href="registration.html">Don't have account? Sign up</a>
+        </form>
+    </div>
+</div>
 </body>
