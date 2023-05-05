@@ -15,6 +15,5 @@ class DefaultController extends AppController {
     public function dashboard() {
         $this->render('dashboard');
     }
-
 }
 
