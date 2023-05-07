@@ -3,6 +3,7 @@
 require_once 'src/controller/DefaultController.php';
 require_once 'src/controller/AppController.php';
 require_once 'src/controller/LoginController.php';
+require_once 'src/controller/RelativeController.php';
 
 class Routing {
     private static $routes;

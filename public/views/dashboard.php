@@ -52,77 +52,27 @@
                 NEXT PLANNED VISITS
             </header>
             <section class="relatives">
-                <div id="relative-2">
+                <div id="relative">
                     <div>
-                        <h3>To visit in Month</h3>
+                        <h3><?= $relative->getNextPlannedVisit()?></h3>
                     </div>
-                    <img src="public/img/uploads/avatar.png">
+                    <img<?= $relative->getImage()?>">
                     <div>
                         <h2>
-                            Name surname
+                            <?= $relative->getFullName() ?>
                         </h2>
                         <ul>
                             <li>
                                 <i class="fa-solid fa-star"></i>
-                                <span>Date of birth</span>
+                                <span><?= $relative->getDateOfBirth() ?></span>
                             </li>
                             <li>
                                 <i class="fa-solid fa-cross"></i>
-                                <span>Date of Death</span>
+                                <span><?= $relative->getDateOfDeath() ?></span>
                             </li>
                             <li>
                                 <i class="fa-solid fa-location-dot"></i>
-                                <span>Location</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div id="relative-3">
-                    <div>
-                        <h3>To visit in Month</h3>
-                    </div>
-                    <img src="public/img/uploads/avatar.png">
-                    <div>
-                        <h2>
-                            Name surname
-                        </h2>
-                        <ul>
-                            <li>
-                                <i class="fa-solid fa-star"></i>
-                                <span>Date of birth</span>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-cross"></i>
-                                <span>Date of Death</span>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-location-dot"></i>
-                                <span>Location</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div id="relative-1">
-                    <div>
-                        <h3>To visit in Month</h3>
-                    </div>
-                    <img src="public/img/uploads/avatar.png">
-                    <div>
-                        <h2>
-                            Name surname
-                        </h2>
-                        <ul>
-                            <li>
-                                <i class="fa-solid fa-star"></i>
-                                <span>Date of birth</span>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-cross"></i>
-                                <span>Date of Death</span>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-location-dot"></i>
-                                <span>Location</span>
+                                <span><?= $relative->getLocation() ?></span>
                             </li>
                         </ul>
                     </div>

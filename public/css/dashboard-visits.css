@@ -60,3 +60,13 @@ section {
     margin-right: 10px;
 }
 
+section.relatives-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.relatives-form>form {
+    display: flex;
+    flex-direction: column;
+}
