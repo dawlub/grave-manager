@@ -18,3 +18,14 @@ services:
       dockerfile: docker/php/Dockerfile
     volumes:
       - .:/app/
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: grave_manager_db
+      POSTGRES_USER:  postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - .:/app/
+    ports:
+      - 5432:5432
