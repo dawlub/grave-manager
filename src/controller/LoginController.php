@@ -2,16 +2,24 @@
 
 require_once 'AppController.php';
 require_once __DIR__ .'/../model/User.php';
+require_once __DIR__.'/../repository/UserRepository.php';
 
 class LoginController extends AppController {
 
     public function login() {
-        $user = new User('sample@pk.edu.pl', 'admin', 'sample firstName', 'sample lastName');
+        $userRepository = new UserRepository();
         if (!$this -> isPost()){
             return $this -> render('login');
         }
         $email = $_POST["email"];
         $password = $_POST["password"];
+
+        $user = $userRepository->getUser($email);
+
+        if (!$user) {
+            return $this->render('login', ['messages' => ['User not exist']]);
+        }
+
         if ($user->getEmail() !== $email){
             return $this -> render('login', ['messages' => ['User with provided email address not exist!']]);
         }
