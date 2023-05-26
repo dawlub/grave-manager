@@ -11,5 +11,9 @@ class DefaultController extends AppController {
     public function registration() {
         $this->render('registration');
     }
+
+    public function dashboard() {
+        $this->render('dashboard');
+    }
 }
 

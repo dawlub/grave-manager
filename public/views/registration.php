@@ -10,9 +10,15 @@
         <img src="public/img/logo.svg">
     </div>
     <div class="registration-container">
-        <form class="registration-form">
-            <input name="first name" type="text" placeholder="first name">
-            <input name="last name" type="text" placeholder="last name">
+        <form class="registration-form" action="registration" method="POST">
+            <?php if(isset($messages)) {
+                foreach ($messages as $message) {
+                    echo $message;
+                }
+            }
+            ?>
+            <input name="firstName" type="text" placeholder="first name">
+            <input name="lastName" type="text" placeholder="last name">
             <input name="email" type="text" placeholder="email@email.com">
             <input name="password" type="password" placeholder="password">
             <input name="confirm password" type="password" placeholder="confirm password">
