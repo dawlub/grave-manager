@@ -54,9 +54,9 @@
             <section class="relatives">
                 <div id="relative">
                     <div>
-                        <h3><?= $relative->getNextPlannedVisit()?></h3>
+                        <h3>Next planned visit is in progres</h3>
                     </div>
-                    <img<?= $relative->getImage()?>">
+                    <img src="public/uploads/<?= $relative->getImage(); ?>">
                     <div>
                         <h2>
                             <?= $relative->getFullName() ?>

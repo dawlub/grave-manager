@@ -2,29 +2,41 @@
 
 require_once 'AppController.php';
 require_once __DIR__ .'/../model/Relative.php';
+require_once __DIR__.'/../repository/RelativeRepository.php';
 
 class RelativeController extends AppController {
 
     const MAX_FILE_SIZE = 1024*1024;
-    const SUPPORTED_TYPES = ['image/png', 'image/jpg'];
+    const SUPPORTED_TYPES = ['image/png', 'image/jpeg'];
     const UPLOAD_DIRECTORY = '/../public/uploads/';
 
     private $messages = [];
+
+    private $relativeRepositry;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->relativeRepositry = new RelativeRepository();
+    }
 
     public function addRelative()
     {
         if ($this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validateFile($_FILES['file'])) {
             move_uploaded_file(
-                $_FILES['file']['tmp_name'], dirname(__DIR__).self::UPLOAD_DIRECTORY.$_FILES['file']['name']
+                $_FILES['file']['tmp_name'], dirname(__DIR__) . self::UPLOAD_DIRECTORY . $_FILES['file']['name']
             );
-
-            $relative = new Relative($_POST['nextPlannedVisit'],$_POST['fullName'], $_POST['dateOfBirth'],
-                $_POST['dateOfDeath'], $_POST['location'], $_FILES['file']);
+        //}
+            //TODO provide dto with validations if will be time for it
+            $relative = new Relative($_POST['fullName'], $_POST['dateOfBirth'], $_POST['dateOfDeath'],
+                $_POST['location'], $_FILES['file']);
+            $this->relativeRepositry->addRelative($relative);
 
             return $this->render('dashboard', ['messages' => $this->messages]);
         }
-        return $this->render('add-relative-dashboard', ['messages' => $this->message]);
+        return $this->render('addRelativeDashboard', ['messages' => $this->message]);
     }
+
 
     private function validateFile(array $file) : bool
     {

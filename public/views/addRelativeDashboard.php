@@ -51,12 +51,15 @@
         <section class="relatives-form">
             <h1>Add Relative to your collection</h1>
             <form action="addRelative" method="POST" ENCTYPE="multipart/form-data">
-                <?php if(isset($messages)) {
-                    foreach ($messages as $message) {
-                        echo $message;
+                <div class="messages">
+                    <?php
+                    if(isset($messages)){
+                        foreach($messages as $message) {
+                            echo $message;
+                        }
                     }
-                }
-                ?>
+                    ?>
+                </div>
                 <input name="fullName" type="text" placeholder="Full name">
                 <input name="dateOfBirth" type="text" placeholder="Date of birth">
                 <input name="dateOfDeath" type="text" placeholder="Date of death">
