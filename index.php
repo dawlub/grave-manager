@@ -6,7 +6,7 @@ $path = trim($_SERVER['REQUEST_URI'], '/');
 $path = parse_url($path, PHP_URL_PATH);
 
 Routing::get('registration', 'LoginController');
-Routing::get('dashboard', 'DefaultController');
+Routing::get('dashboard', 'RelativeController');
 Routing::post('login', 'LoginController');
 Routing::post('addRelative', 'RelativeController');
 

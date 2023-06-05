@@ -52,6 +52,7 @@
                 NEXT PLANNED VISITS
             </header>
             <section class="relatives">
+                <?php foreach ($relatives as $relative): ?>
                 <div id="relative">
                     <div>
                         <h3>Next planned visit is in progres</h3>
@@ -77,6 +78,7 @@
                         </ul>
                     </div>
                 </div>
+                <?php endforeach; ?>
             </section>
         </main>
     </div>

@@ -32,9 +32,17 @@ class RelativeController extends AppController {
                 $_POST['location'], $_FILES['file']);
             $this->relativeRepositry->addRelative($relative);
 
-            return $this->render('dashboard', ['messages' => $this->messages]);
+            return $this->render('dashboard', [
+                'relatives' => $this->relativeRepositry->getRelatives(),
+                'messages' => $this->messages]);
         }
         return $this->render('addRelativeDashboard', ['messages' => $this->message]);
+    }
+
+    public function dashboard()
+    {
+        $relatives = $this->relativeRepositry->getRelatives();
+        $this->render('dashboard', ['relatives' => $relatives]);
     }
 
 
