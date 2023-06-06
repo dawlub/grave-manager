@@ -3,6 +3,7 @@
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/dashboard-visits.css">
     <script src="https://kit.fontawesome.com/f83d14d316.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="public/js/search.js" defer></script>
     <title>Dashboard page</title>
 </head>
 
@@ -36,12 +37,10 @@
         <main>
             <header>
                 <div class="search-bar">
-                    <form class="search-form">
                         <div class="search-input-wrapper">
                             <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                            <input type="text" class="search-input" placeholder="Search relatives">
+                            <input class="search-input" placeholder="Search relatives">
                         </div>
-                    </form>
                 </div>
                 <div class="add-relatives">
                     <i class="fa-sharp fa-solid fa-plus"></i>
@@ -52,6 +51,7 @@
                 NEXT PLANNED VISITS
             </header>
             <section class="relatives">
+                <?php foreach ($relatives as $relative): ?>
                 <div id="relative">
                     <div>
                         <h3>Next planned visit is in progres</h3>
@@ -77,7 +77,31 @@
                         </ul>
                     </div>
                 </div>
+                <?php endforeach; ?>
             </section>
         </main>
     </div>
 </body>
+
+<template id="relative-template">
+    <div id="">
+        <img src="">
+        <div>
+            <h2 name="fullName"></h2>
+            <ul>
+                <li>
+                    <i class="fa-solid fa-star"></i>
+                    <span name="dateOfBirth"></span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-cross"></i>
+                    <span name="dateOfDeath"></span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span name="location"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</template

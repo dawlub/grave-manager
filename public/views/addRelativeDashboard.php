@@ -34,20 +34,6 @@
         </ul>
     </nav>
     <main>
-        <header>
-            <div class="search-bar">
-                <form class="search-form">
-                    <div class="search-input-wrapper">
-                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                        <input type="text" class="search-input" placeholder="Search relatives">
-                    </div>
-                </form>
-            </div>
-            <div class="add-relatives">
-                <i class="fa-sharp fa-solid fa-plus"></i>
-                add relatives
-            </div>
-        </header>
         <section class="relatives-form">
             <h1>Add Relative to your collection</h1>
             <form action="addRelative" method="POST" ENCTYPE="multipart/form-data">

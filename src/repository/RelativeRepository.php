@@ -30,6 +30,28 @@ class RelativeRepository extends Repository
         );
     }
 
+    public function getRelatives(): array
+    {
+        $result = [];
+
+        $stmt = $this->database->connect()->prepare(
+            'SELECT * FROM relative');
+        $stmt->execute();
+        $relatives = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        echo $relatives[1]['full_name'];
+        foreach ($relatives as $relative) {
+            $result[] = new Relative(
+                $relative['full_name'],
+                $relative['date_of_birth'],
+                $relative['date_of_death'],
+                $relative['location'],
+                $relative['image'],
+                $relative['user_id']
+            );
+        }
+        return $result;
+    }
+
     public function addRelative(Relative $relative): void
     {
         $stmt = $this->database->connect()->prepare('
@@ -44,5 +66,18 @@ class RelativeRepository extends Repository
             $relative->getImage(),
             $useId
         ]);
+    }
+
+    public function getRelativeByName(string $searchString)
+    {
+        $searchString = '%'.strtolower($searchString).'%';
+
+        $stmt = $this->database->connect()->prepare('
+        SELECT * FROM relative WHERE LOWER(full_name) LIKE :search');
+
+        $stmt-> bindParam(':search', $searchString, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
