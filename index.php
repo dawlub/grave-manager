@@ -9,5 +9,6 @@ Routing::get('registration', 'LoginController');
 Routing::get('dashboard', 'RelativeController');
 Routing::post('login', 'LoginController');
 Routing::post('addRelative', 'RelativeController');
+Routing::post('search', 'RelativeController');
 
 Routing::run($path);

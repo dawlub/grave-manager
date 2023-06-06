@@ -26,10 +26,9 @@ class RelativeController extends AppController {
             move_uploaded_file(
                 $_FILES['file']['tmp_name'], dirname(__DIR__) . self::UPLOAD_DIRECTORY . $_FILES['file']['name']
             );
-        //}
             //TODO provide dto with validations if will be time for it
             $relative = new Relative($_POST['fullName'], $_POST['dateOfBirth'], $_POST['dateOfDeath'],
-                $_POST['location'], $_FILES['file']);
+                $_POST['location'], $_FILES['file']['name']);
             $this->relativeRepositry->addRelative($relative);
 
             return $this->render('dashboard', [
@@ -43,6 +42,21 @@ class RelativeController extends AppController {
     {
         $relatives = $this->relativeRepositry->getRelatives();
         $this->render('dashboard', ['relatives' => $relatives]);
+    }
+
+    public function search()
+    {
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+
+        if( $contentType === "application/json") {
+            $content = trim(file_get_contents("php://input"));
+            $decoded = json_decode($content, true);
+
+            header("Content-typ: application/json");
+            http_response_code(200);
+
+            echo json_encode($this->relativeRepositry->getRelativeByName($decoded['search']));
+        }
     }
 
 
