@@ -34,10 +34,10 @@ function createRelative(relative) {
     const template = document.querySelector("#relative-template");
 
     const clone = template.content.cloneNode(true);
-    console.log(relative);
+
     const image = clone.querySelector("img");
     image.src = `/public/uploads/${relative.image}`;
-    console.log(image);
+
     const fullName = clone.querySelector('h2[name="fullName"]');
     fullName.innerHTML = relative.full_name;
 

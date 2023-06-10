@@ -43,8 +43,7 @@
                         </div>
                 </div>
                 <div class="add-relatives">
-                    <i class="fa-sharp fa-solid fa-plus"></i>
-                    add relatives
+                    <a href="/addRelative"> <i class="fa-sharp fa-solid fa-plus"></i>add relative</a>
                 </div>
             </header>
             <header class="visits-header">
