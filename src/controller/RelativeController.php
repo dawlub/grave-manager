@@ -35,7 +35,7 @@ class RelativeController extends AppController {
                 'relatives' => $this->relativeRepositry->getRelatives(),
                 'messages' => $this->messages]);
         }
-        return $this->render('addRelativeDashboard', ['messages' => $this->message]);
+        return $this->render('add-relative-dashboard', ['messages' => $this->message]);
     }
 
     public function dashboard()

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" type="text/css" href="public/css/style.css">
-    <link rel="stylesheet" type="text/css" href="public/css/dashboard-visits.css">
+    <link rel="stylesheet" type="text/css" href="public/css/add-relatives.css">
+    <link rel="stylesheet" type="text/css" href="public/css/dashboard.css">
     <script src="https://kit.fontawesome.com/f83d14d316.js" crossorigin="anonymous"></script>
     <title>Dashboard page</title>
 </head>
@@ -33,8 +33,8 @@
             </li>
         </ul>
     </nav>
-    <main>
-        <section class="relatives-form">
+    <main class="add-relatives-main">
+        <section class="add-relatives-section">
             <h1>Add Relative to your collection</h1>
             <form action="addRelative" method="POST" ENCTYPE="multipart/form-data">
                 <div class="messages">
@@ -50,7 +50,7 @@
                 <input name="dateOfBirth" type="text" placeholder="Date of birth">
                 <input name="dateOfDeath" type="text" placeholder="Date of death">
                 <input name="location" type="text" placeholder="Location">
-                <input type="file" name="file">
+                <input class="file-button" type="file" name="file">
                 <button type="submit">add</button>
             </form>
         </section>

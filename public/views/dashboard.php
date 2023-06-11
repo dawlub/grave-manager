@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="public/css/dashboard.css">
     <link rel="stylesheet" type="text/css" href="public/css/dashboard-visits.css">
     <script src="https://kit.fontawesome.com/f83d14d316.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="public/js/search.js" defer></script>
     <title>Dashboard page</title>
 </head>
-
 <body>
     <div class="dashboard-container">
         <nav>
