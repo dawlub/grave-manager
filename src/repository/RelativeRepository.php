@@ -38,15 +38,13 @@ class RelativeRepository extends Repository
             'SELECT * FROM relative');
         $stmt->execute();
         $relatives = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        echo $relatives[1]['full_name'];
         foreach ($relatives as $relative) {
             $result[] = new Relative(
                 $relative['full_name'],
                 $relative['date_of_birth'],
                 $relative['date_of_death'],
                 $relative['location'],
-                $relative['image'],
-                $relative['user_id']
+                $relative['image']
             );
         }
         return $result;
@@ -57,14 +55,13 @@ class RelativeRepository extends Repository
         $stmt = $this->database->connect()->prepare('
             INSERT INTO relative (full_name, date_of_birth, date_of_death, location, image, user_id)
                 VALUES (?, ?, ?, ?, ?, ?)');
-        $useId = 1;
         $stmt->execute([
             $relative->getFullName(),
             $relative->getDateOfBirth(),
             $relative->getDateOfDeath(),
             $relative->getLocation(),
             $relative->getImage(),
-            $useId
+            $_SESSION['id']
         ]);
     }
 

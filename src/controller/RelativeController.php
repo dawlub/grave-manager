@@ -22,27 +22,37 @@ class RelativeController extends AppController {
 
     public function addRelative()
     {
-        if ($this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validateFile($_FILES['file'])) {
-            move_uploaded_file(
-                $_FILES['file']['tmp_name'], dirname(__DIR__) . self::UPLOAD_DIRECTORY . $_FILES['file']['name']
-            );
-            //TODO provide dto with validations if will be time for it
-            $relative = new Relative($_POST['fullName'], $_POST['dateOfBirth'], $_POST['dateOfDeath'],
-                $_POST['location'], $_FILES['file']['name']);
-            $this->relativeRepositry->addRelative($relative);
+        if(!empty($_SESSION["id"])) {
+            if ($this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validateFile($_FILES['file'])) {
+                move_uploaded_file(
+                    $_FILES['file']['tmp_name'], dirname(__DIR__) . self::UPLOAD_DIRECTORY . $_FILES['file']['name']
+                );
+                //TODO provide dto with validations if will be time for it
+                $relative = new Relative($_POST['fullName'], $_POST['dateOfBirth'], $_POST['dateOfDeath'],
+                    $_POST['location'], $_FILES['file']['name']);
+                $this->relativeRepositry->addRelative($relative);
 
-            return $this->render('dashboard', [
-                'relatives' => $this->relativeRepositry->getRelatives(),
-                'messages' => $this->messages]);
+                return $this->render('dashboard', [
+                    'relatives' => $this->relativeRepositry->getRelatives(), 'messages' => $this->messages]);
+            }
+            return $this->render('add-relative-dashboard', ['messages' => $this->message]);
+        } else {
+            header("Location: {$this->url}/login");
+            return $this->render('login');
         }
-        return $this->render('add-relative-dashboard', ['messages' => $this->message]);
     }
 
     public function dashboard()
     {
-        $relatives = $this->relativeRepositry->getRelatives();
-        $this->render('dashboard', ['relatives' => $relatives]);
+        if (!empty($_SESSION['id'])) {
+            $relatives = $this->relativeRepositry->getRelatives();
+            return $this->render('dashboard', ['relatives' => $relatives]);
+        } else {
+            header("Location: {$this->url}/login");
+            return $this->render('login');
+        }
     }
+
 
     public function search()
     {

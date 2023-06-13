@@ -43,7 +43,7 @@ textarea {
     opacity: 0.88;;
 }
 
-button {
+.submit-relative-button {
     border: 1px solid #FFFFFF;
     border-radius: 41px;
     margin-left: 1em;

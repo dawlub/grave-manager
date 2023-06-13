@@ -24,10 +24,12 @@ main {
     flex-direction: column;
     height: 100vh;
 }
-
-nav > img {
-    width: 80%;
-    margin: 2em auto;
+nav a {
+    justify-content: center;
+}
+nav a>img {
+    width: 90%;
+    margin: 2em 0.8em;
 }
 
 .dashboard-menu a {

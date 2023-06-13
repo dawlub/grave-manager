@@ -4,7 +4,6 @@ const relativeContainer = document.querySelector(".relatives")
 search.addEventListener("keyup", function (event){
     if (event.key === "Enter") {
         event.preventDefault();
-        console.log("start");
         const data = {search: this.value};
 
         fetch("/search", {
@@ -14,7 +13,6 @@ search.addEventListener("keyup", function (event){
             },
             body: JSON.stringify(data)
         }).then(function (response) {
-            console.log(response);
             return response.json();
         }).then(function (relatives) {
             relativeContainer.innerHTML = "";
@@ -25,7 +23,6 @@ search.addEventListener("keyup", function (event){
 
 function loadRelatives(relatives) {
     relatives.forEach(relative => {
-        console.log(relative);
         createRelative(relative);
     })
 }

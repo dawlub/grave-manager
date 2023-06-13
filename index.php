@@ -10,5 +10,7 @@ Routing::get('dashboard', 'RelativeController');
 Routing::post('login', 'LoginController');
 Routing::post('addRelative', 'RelativeController');
 Routing::post('search', 'RelativeController');
+Routing::post('logout', 'LoginController');
+Routing::get('relatives', 'UserRelativesController');
 
 Routing::run($path);

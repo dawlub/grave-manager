@@ -3,39 +3,15 @@
     <link rel="stylesheet" type="text/css" href="public/css/add-relatives.css">
     <link rel="stylesheet" type="text/css" href="public/css/dashboard.css">
     <script src="https://kit.fontawesome.com/f83d14d316.js" crossorigin="anonymous"></script>
-    <title>Dashboard page</title>
+    <title>Add relative page</title>
 </head>
 
 <body>
 <div class="dashboard-container">
-    <nav>
-        <img src="public/img/logo.svg">
-        <ul class="dashboard-menu">
-            <li>
-                <i class="fa-solid fa-user-group"></i>
-                <a href="#" class="button">relatives</a>
-            </li>
-            <li>
-                <i class="fa-solid fa-calendar-check"></i>
-                <a href="#" class="button">calendar</a>
-            </li>
-            <li>
-                <i class="fa-solid fa-bell"></i>
-                <a href="#" class="button">notifications</a>
-            </li>
-            <li>
-                <i class="fa-solid fa-message"></i>
-                <a href="#" class="button">messages</a>
-            </li>
-            <li>
-                <i class="fa-solid fa-gear"></i>
-                <a href="#" class="button">settings</a>
-            </li>
-        </ul>
-    </nav>
+    <?php include 'navigation-panel.php'; ?>
     <main class="add-relatives-main">
         <section class="add-relatives-section">
-            <h1>Add Relative to your collection</h1>
+            <h1>Add Relative to Database</h1>
             <form action="addRelative" method="POST" ENCTYPE="multipart/form-data">
                 <div class="messages">
                     <?php
@@ -51,7 +27,7 @@
                 <input name="dateOfDeath" type="text" placeholder="Date of death">
                 <input name="location" type="text" placeholder="Location">
                 <input class="file-button" type="file" name="file">
-                <button type="submit">add</button>
+                <button class="submit-relative-button" type="submit">add</button>
             </form>
         </section>
     </main>

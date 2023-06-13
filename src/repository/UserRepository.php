@@ -28,6 +28,19 @@ class UserRepository extends Repository
         );
     }
 
+    public function getUserId(User $user): int {
+        $stmt = $this->database->connect()->prepare('
+        SELECT * FROM "user" WHERE email = :email
+        ');
+
+        //$email = $user->getEmail();
+        $stmt->bindParam(':email', $user->getEmail(), PDO::PARAM_STR);
+        $stmt->execute();
+
+        $fetchedUserData = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $fetchedUserData['id'];
+    }
+
     public function addUser(User $user): void
     {
         $stmt = $this->database->connect()->prepare('
