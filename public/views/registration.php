@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/login.css"><link>
-    <script type="text/javascript" src="./public/js/script.js" defer></script>
+    <script type="text/javascript" src="/public/js/script.js" defer></script>
     <title>Registration page</title>
 </head>
 

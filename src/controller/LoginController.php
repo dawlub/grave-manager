@@ -37,7 +37,7 @@ class LoginController extends AppController
             if ($user->getEmail() !== $email) {
                 return $this->render('login', ['messages' => ['User with provided email address not exist!']]);
             }
-            if ($user->getPassword() !== $password) {
+            if (!password_verify($password, $user->getPassword())) {
                 return $this->render('login', ['messages' => ['Wrong password']]);
             }
             $userId = $this->userRepository->getUserId($user);
@@ -50,8 +50,16 @@ class LoginController extends AppController
         if (!$this->isPost()) {
             return $this->render('registration');
         }
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $firstName = $_POST['firstName'];
+        $lastName = $_POST['lastName'];
 
-        $user = new User($_POST['email'], $_POST['password'], $_POST['firstName'], $_POST['lastName']);
+        $user = new User(
+            $email,
+            password_hash($password, PASSWORD_DEFAULT),
+            $firstName,
+            $lastName);
 
         $this->userRepository->addUser($user);
 
