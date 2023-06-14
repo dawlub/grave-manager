@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="public/css/login.css">
     <title>Login page</title>
 </head>
 
@@ -19,10 +19,10 @@
                 }
                 ?>
                 </div>
-                <input name="email" type="text" placeholder="email@email.com">
+                <input name="email" type="text" placeholder="example@domain.com">
                 <input name="password" type="password" placeholder="password">
                 <button type="submit">login</button>
-                <a class="registration-link" href="registration.php">Don't have account? Sign up</a>
+                <a class="registration-link" href="registration">Don't have account? Sign up</a>
             </form>
         </div>
     </div>

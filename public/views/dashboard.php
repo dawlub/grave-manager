@@ -1,39 +1,14 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="public/css/dashboard.css">
     <link rel="stylesheet" type="text/css" href="public/css/dashboard-visits.css">
     <script src="https://kit.fontawesome.com/f83d14d316.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="public/js/search.js" defer></script>
     <title>Dashboard page</title>
 </head>
-
 <body>
     <div class="dashboard-container">
-        <nav>
-            <img src="public/img/logo.svg">
-            <ul class="dashboard-menu">
-                <li>
-                    <i class="fa-solid fa-user-group"></i>
-                    <a href="#" class="button">relatives</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-calendar-check"></i>
-                    <a href="#" class="button">calendar</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-bell"></i>
-                    <a href="#" class="button">notifications</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-message"></i>
-                    <a href="#" class="button">messages</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-gear"></i>
-                    <a href="#" class="button">settings</a>
-                </li>
-            </ul>
-        </nav>
+        <?php include 'navigation-panel.php'; ?>
         <main>
             <header>
                 <div class="search-bar">
@@ -43,8 +18,7 @@
                         </div>
                 </div>
                 <div class="add-relatives">
-                    <i class="fa-sharp fa-solid fa-plus"></i>
-                    add relatives
+                    <a href="/addRelative"> <i class="fa-sharp fa-solid fa-plus"></i>add relative</a>
                 </div>
             </header>
             <header class="visits-header">
