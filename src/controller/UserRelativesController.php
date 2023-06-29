@@ -13,10 +13,15 @@ class UserRelativesController extends AppController
         $this->userRelativeRepository = new UserRelativeRepository();
     }
 
-    public function relatives()
+    public function dashboard()
     {
-        $relatives = $this->userRelativeRepository->getUserRelatives($_SESSION['id']);
-        return $this->render('dashboard', ['relatives' => $relatives]);
+        if (!empty($_SESSION['id'])) {
+            $relatives = $this->userRelativeRepository->getUserRelatives($_SESSION['id']);
+            return $this->render('dashboard', ['relatives' => $relatives]);
+        } else {
+            header("Location: {$this->url}/login");
+            return $this->render('login');
+        }
     }
 
     public function addToCollection()

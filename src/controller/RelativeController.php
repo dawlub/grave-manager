@@ -42,17 +42,6 @@ class RelativeController extends AppController {
         }
     }
 
-    public function dashboard()
-    {
-        if (!empty($_SESSION['id'])) {
-            $relatives = $this->relativeRepositry->getRelatives();
-            return $this->render('dashboard', ['relatives' => $relatives]);
-        } else {
-            header("Location: {$this->url}/login");
-            return $this->render('login');
-        }
-    }
-
 
     public function search()
     {

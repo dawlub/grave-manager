@@ -28,7 +28,9 @@
                 <?php foreach ($relatives as $relative): ?>
                 <div id="relative">
                     <div>
-                        <h3>Next planned visit is in progres</h3>
+                        <h3>
+                            <?= $relative->getVisit() ?>
+                        </h3>
                     </div>
                     <img src="public/uploads/<?= $relative->getImage(); ?>">
                     <div>
