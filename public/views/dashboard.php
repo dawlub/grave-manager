@@ -75,6 +75,9 @@
                     <i class="fa-solid fa-location-dot"></i>
                     <span name="location"></span>
                 </li>
+                <li>
+                <button class="add-searched">Add to your collection</button>
+                </li>
             </ul>
         </div>
     </div>

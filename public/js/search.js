@@ -47,6 +47,21 @@ function createRelative(relative) {
     const location = clone.querySelector('span[name="location"]');
     location.innerHTML = relative.location;
 
-
+    const addToCollection = clone.querySelector('.add-searched');
+    addToCollection.addEventListener('click', function (event) {
+        event.stopPropagation();
+        console.log(relative.id)
+        fetch("/addToCollection", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({id: relative.id})
+        }).then(function (response) {
+            return response.json();
+        }).then(function (data) {
+            // Handle the response from the server
+        });
+    });
     relativeContainer.appendChild(clone);
 }

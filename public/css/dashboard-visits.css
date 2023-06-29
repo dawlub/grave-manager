@@ -83,3 +83,16 @@ section.relatives-form {
     display: flex;
     flex-direction: column;
 }
+.add-searched>button{
+    border: none;
+    color: white;
+    margin: 1em;
+    max-width: 40%;
+    width: 100%;
+    line-height: 2em;
+    height: auto;
+    padding: 10px 20px;
+    background: #5558AA 0% 0% no-repeat padding-box;
+    border-radius: 26px;
+    opacity: 0.88;
+}
