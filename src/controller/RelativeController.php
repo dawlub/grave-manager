@@ -27,7 +27,6 @@ class RelativeController extends AppController {
                 move_uploaded_file(
                     $_FILES['file']['tmp_name'], dirname(__DIR__) . self::UPLOAD_DIRECTORY . $_FILES['file']['name']
                 );
-                //TODO provide dto with validations if will be time for it
                 $relative = new Relative($_POST['fullName'], $_POST['dateOfBirth'], $_POST['dateOfDeath'],
                     $_POST['location'], $_FILES['file']['name']);
                 $this->relativeRepositry->addRelative($relative);

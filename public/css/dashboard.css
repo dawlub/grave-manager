@@ -93,7 +93,7 @@ li {
     font-weight: 900;
     width: 1em;
 }
-/*TODO to this point works fine, have to fix all styles later*/
+
 header {
     display: flex;
     justify-content: space-between;
