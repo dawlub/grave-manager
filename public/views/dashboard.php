@@ -78,7 +78,7 @@
                     <span name="location"></span>
                 </li>
             </ul>
-                <button class="add-searched">Add to your collection</button>
+            <button class="add-searched">Add to your collection</button>
         </div>
     </div>
-</template
+</template>
