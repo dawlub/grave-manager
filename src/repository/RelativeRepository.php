@@ -15,7 +15,6 @@ class RelativeRepository extends Repository
 
         $relative = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        //TODO try catch with exception and info relative not found
         if ($relative == false) {
             return null;
         }
@@ -53,15 +52,14 @@ class RelativeRepository extends Repository
     public function addRelative(Relative $relative): void
     {
         $stmt = $this->database->connect()->prepare('
-            INSERT INTO relative (full_name, date_of_birth, date_of_death, location, image, user_id)
-                VALUES (?, ?, ?, ?, ?, ?)');
+            INSERT INTO relative (full_name, date_of_birth, date_of_death, location, image)
+                VALUES (?, ?, ?, ?, ?)');
         $stmt->execute([
             $relative->getFullName(),
             $relative->getDateOfBirth(),
             $relative->getDateOfDeath(),
             $relative->getLocation(),
             $relative->getImage(),
-            $_SESSION['id']
         ]);
     }
 

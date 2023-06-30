@@ -3,6 +3,7 @@
 require_once 'AppController.php';
 require_once __DIR__ .'/../model/Relative.php';
 require_once __DIR__.'/../repository/RelativeRepository.php';
+require_once __DIR__.'/../repository/UserRelativeRepository.php';
 
 class RelativeController extends AppController {
 
@@ -14,10 +15,13 @@ class RelativeController extends AppController {
 
     private $relativeRepositry;
 
+    private $userRelativeRepository;
+
     public function __construct()
     {
         parent::__construct();
         $this->relativeRepositry = new RelativeRepository();
+        $this->userRelativeRepositry = new UserRelativeRepository();
     }
 
     public function addRelative()
@@ -32,7 +36,7 @@ class RelativeController extends AppController {
                 $this->relativeRepositry->addRelative($relative);
 
                 return $this->render('dashboard', [
-                    'relatives' => $this->relativeRepositry->getRelatives(), 'messages' => $this->messages]);
+                    'relatives' => $this->userRelativeRepositry->getUserRelatives($_SESSION["id"]), 'messages' => $this->messages]);
             }
             return $this->render('add-relative-dashboard', ['messages' => $this->message]);
         } else {
