@@ -62,7 +62,7 @@
 <template id="relative-template">
     <div id="">
         <img src="">
-        <div>
+        <div class="relative-template">
             <h2 name="fullName"></h2>
             <ul>
                 <li>
@@ -77,10 +77,8 @@
                     <i class="fa-solid fa-location-dot"></i>
                     <span name="location"></span>
                 </li>
-                <li>
-                <button class="add-searched">Add to your collection</button>
-                </li>
             </ul>
+                <button class="add-searched">Add to your collection</button>
         </div>
     </div>
 </template
