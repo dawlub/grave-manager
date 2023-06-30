@@ -28,7 +28,9 @@
                 <?php foreach ($relatives as $relative): ?>
                 <div id="relative">
                     <div>
-                        <h3>Next planned visit is in progres</h3>
+                        <h3>
+                            <?= $relative->getVisit() ?>
+                        </h3>
                     </div>
                     <img src="public/uploads/<?= $relative->getImage(); ?>">
                     <div>
@@ -60,7 +62,7 @@
 <template id="relative-template">
     <div id="">
         <img src="">
-        <div>
+        <div class="relative-template">
             <h2 name="fullName"></h2>
             <ul>
                 <li>
@@ -76,6 +78,7 @@
                     <span name="location"></span>
                 </li>
             </ul>
+                <button class="add-searched">Add to your collection</button>
         </div>
     </div>
 </template

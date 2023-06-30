@@ -5,7 +5,7 @@
     <ul class="dashboard-menu">
         <li>
             <i class="fa-solid fa-user-group"></i>
-            <a href="relatives" class="button">relatives</a>
+            <a href="dashboard" class="button">relatives</a>
         </li>
         <li>
             <i class="fa-solid fa-calendar-check"></i>
