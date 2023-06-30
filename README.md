@@ -58,3 +58,6 @@ $ docker-compose down
 
 ### Adding to db
 ![img.png](doc/relativeAdding.png)
+
+### View of user relatives collection
+![img.png](doc/relatives.png)
