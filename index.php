@@ -12,5 +12,6 @@ Routing::post('addRelative', 'RelativeController');
 Routing::post('search', 'RelativeController');
 Routing::post('logout', 'LoginController');
 Routing::post('addToCollection', 'UserRelativesController');
+Routing::post('updateVisit', 'UserRelativesController');
 
 Routing::run($path);

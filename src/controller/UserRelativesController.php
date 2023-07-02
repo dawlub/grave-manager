@@ -42,4 +42,21 @@ class UserRelativesController extends AppController
 
         echo json_encode(['message' => "Relative with id $relativeId was added to the collection"]);
     }
+
+    public function updateVisit()
+    {
+        $inputJSON = file_get_contents('php://input');
+        $input = json_decode($inputJSON, true);
+
+        if (!isset($input['id']) || !isset($input['visitDate'])) {
+            http_response_code(400);
+            echo json_encode(['error' => "'id' or 'visitDate' is missing from request data."]);
+            return;
+        }
+
+        $relativeId = intval($input['id']);
+        $visitDate = $input['visitDate'];
+
+        $this->userRelativeRepository->updateVisitDate($relativeId, $visitDate);
+    }
 }

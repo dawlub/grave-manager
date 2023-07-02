@@ -19,6 +19,7 @@ class UserRelativeRepository extends Repository
         echo $relatives['full_name'];
         foreach ($relatives as $relative) {
             $result[] = new RelativeDto(
+                $relative['id'],
                 $relative['visit'],
                 $relative['full_name'],
                 $relative['date_of_birth'],
@@ -40,5 +41,16 @@ class UserRelativeRepository extends Repository
             $id,
             'Not Planned'
         ]);
+    }
+
+    public function updateVisitDate(int $relativeId, string $visitDate)
+    {
+        $stmt = $this->database->connect()->prepare(
+            'UPDATE user_relative SET visit = :visitDate
+                     WHERE relative_id = :relativeId AND user_id = :userId');
+        $stmt->bindValue(':visitDate', $visitDate, PDO::PARAM_STR);
+        $stmt->bindValue(':relativeId', $relativeId, PDO::PARAM_INT);
+        $stmt->bindValue(':userId', $_SESSION['id'], PDO::PARAM_INT);
+        $stmt->execute();
     }
 }
