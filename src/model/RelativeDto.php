@@ -2,6 +2,7 @@
 
 class RelativeDto
 {
+    private $id;
     private $visit;
     private $fullName;
     private $dateOfBirth;
@@ -9,15 +10,21 @@ class RelativeDto
     private $location;
     private $image;
 
-    public function __construct(string $visit, string $fullName, string $dateOfBirth,
+    public function __construct(int $id, string $visit, string $fullName, string $dateOfBirth,
                                 string $dateOfDeath, string $location, $image)
     {
+        $this->id = $id;
         $this->visit = $visit;
         $this->fullName = $fullName;
         $this->dateOfBirth = $dateOfBirth;
         $this->dateOfDeath = $dateOfDeath;
         $this->location = $location;
         $this->image = $image;
+    }
+
+    public function getId()
+    {
+        return $this->id;
     }
 
     public function getFullName(): string
@@ -78,6 +85,11 @@ class RelativeDto
     public function setVisit(string $visit): void
     {
         $this->visit = $visit;
+    }
+
+    public function setId($id): void
+    {
+        $this->id = $id;
     }
 
 }

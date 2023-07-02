@@ -3,32 +3,79 @@
     <link rel="stylesheet" type="text/css" href="public/css/dashboard.css">
     <link rel="stylesheet" type="text/css" href="public/css/dashboard-visits.css">
     <script src="https://kit.fontawesome.com/f83d14d316.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script type="text/javascript" src="public/js/search.js" defer></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            const visitDates = document.querySelectorAll('.visit-date');
+            visitDates.forEach((visitDate) => {
+                visitDate.addEventListener('keydown', (event) => {
+                    if (event.key === 'Enter') {
+                        event.preventDefault();
+                        visitDate.contentEditable = false;
+                        const relativeId = visitDate.getAttribute('data-relative-id');
+                        const newVisitDate = visitDate.textContent.trim();
+                        console.log('Relative ID:', relativeId);
+                        console.log('New Visit Date:', newVisitDate);
+                        // Send AJAX request to update visit date in the database
+
+                        fetch('/updateVisit', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({
+                                id: relativeId,
+                                visitDate: newVisitDate
+                            }),
+                        })
+                            .then((response) => response.text())
+                            .then((data) => {
+                                console.log(data);
+                            })
+                            .catch((error) => {
+                                console.error('An error occurred:', error);
+                            });
+                    }
+                });
+
+                visitDate.addEventListener('click', () => {
+                    visitDate.contentEditable = true;
+                    visitDate.focus();
+                });
+
+                visitDate.addEventListener('blur', () => {
+                    visitDate.contentEditable = false;
+                });
+            });
+        });
+    </script>
     <title>Dashboard page</title>
 </head>
 <body>
-    <div class="dashboard-container">
-        <?php include 'navigation-panel.php'; ?>
-        <main>
-            <header>
-                <div class="search-bar">
-                        <div class="search-input-wrapper">
-                            <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                            <input class="search-input" placeholder="Search relatives">
-                        </div>
+<div class="dashboard-container">
+    <?php include 'navigation-panel.php'; ?>
+    <main>
+        <header>
+            <div class="search-bar">
+                <div class="search-input-wrapper">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input class="search-input" placeholder="Search relatives">
                 </div>
-                <div class="add-relatives">
-                    <a href="/addRelative"> <i class="fa-sharp fa-solid fa-plus"></i>add relative</a>
-                </div>
-            </header>
-            <header class="visits-header">
-                NEXT PLANNED VISITS
-            </header>
-            <section class="relatives">
-                <?php foreach ($relatives as $relative): ?>
-                <div id="relative">
+            </div>
+            <div class="add-relatives">
+                <a href="/addRelative"> <i class="fa-sharp fa-solid fa-plus"></i>add relative</a>
+            </div>
+        </header>
+        <header class="visits-header">
+            NEXT PLANNED VISITS
+        </header>
+        <section class="relatives">
+            <?php foreach ($relatives as $relative): ?>
+                <div class="relative">
                     <div>
-                        <h3>
+                        <h3 class="visit-date" data-relative-id="<?= $relative->getId(); ?>">
                             <?= $relative->getVisit() ?>
                         </h3>
                     </div>
