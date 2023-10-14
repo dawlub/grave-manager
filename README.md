@@ -37,3 +37,15 @@ The infrastructure for grave-manager consist of:
 ```shell
 docker-compose up -d
 ```
+
+## Branching strategy
+Project was started on studies for laboratories called Manufacturing of Advanced Web Applications.
+
+One of the requirements was to have all services in one git repository therefore branching strategy is introduced.
+
+Repository have restricted branching convention:
+ - for changes in backend-service please create new branch with use of **"BS-*"** at the begging. 
+ - for changes in ui-service please create new branch with use of **"UI-*"** at the begging.
+ - for changes in root grave-manager create new branch with use of **"GM-*"** at the begging.
+
+Please for repo visibility do not mix changes between mentioned above folders.
