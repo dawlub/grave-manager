@@ -10,6 +10,7 @@ Handles the data, API calls, and business logic for the Grave Manager.
 - Auto code generator: **Lombok**
 - Unit tests: **Junit 5 Jupiter**
 - API: **swagger OpenApi**
+- 
 
 ## Features
 
