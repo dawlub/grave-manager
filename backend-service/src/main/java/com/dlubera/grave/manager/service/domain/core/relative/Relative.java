@@ -15,6 +15,7 @@ public class Relative {
     private final LocalDate dateOfBirth;
     private final LocalDate dateOfDeath;
     private final int age;
+    private final byte[] image;
     private final String location;
 
     static Relative from(RelativeEntity relativeEntity) {

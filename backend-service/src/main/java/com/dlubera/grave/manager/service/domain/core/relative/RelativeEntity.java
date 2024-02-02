@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import java.time.LocalDate;
 import java.time.ZonedDateTime;
 
 @Data
@@ -26,16 +27,22 @@ class RelativeEntity {
     private String lastName;
 
     @Column(name = "death_date")
-    private String deathDate;
+    private LocalDate dateOfDeath;
 
     @Column(name = "birth_date")
-    private String birthDate;
+    private LocalDate dateOfBirth;
 
     @Column(name = "age")
     private int age;
 
     @Column(name = "grave_id")
     private Long graveId;
+
+    @Column(name= "location")
+    private String location;
+
+    @Column(name = "image")
+    private byte[] image;
 
     @Column(name = "created_at")
     @UpdateTimestamp

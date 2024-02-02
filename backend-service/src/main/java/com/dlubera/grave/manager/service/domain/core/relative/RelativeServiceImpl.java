@@ -14,7 +14,7 @@ class RelativeServiceImpl {
     Relative saveNewRelative(Relative relative) {
         var entity = RelativeEntity.from(relative);
         //TODO temporary change to avoid nullable constraints from db end
-        entity.setGraveId(0L);
+        entity.setGraveId(1L);
         return Relative.from(relativeRepository.save(entity));
     }
 

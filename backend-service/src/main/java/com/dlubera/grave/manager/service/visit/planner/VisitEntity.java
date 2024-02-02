@@ -1,7 +1,4 @@
 package com.dlubera.grave.manager.service.visit.planner;
 
-
-public class VisitPlannerService {
-
-
+public class VisitEntity {
 }

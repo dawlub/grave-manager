@@ -16,7 +16,7 @@ class RelativeDto {
     private final LocalDate dateOfBirth;
     private final LocalDate dateOfDeath;
     private final int age;
-    private final MultipartFile image;
+    private final String imageBase64;
     private final String location;
 
     static RelativeDto from(Relative relative) {
