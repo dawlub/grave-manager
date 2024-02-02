@@ -49,3 +49,31 @@ Repository have restricted branching convention:
  - for changes in root grave-manager create new branch with use of **"GM-*"** at the begging.
 
 Please for repo visibility do not mix changes between mentioned above folders.
+
+## Features
+* Responsive design for optimal user experience across devices
+* Registration and login
+* User session and logout
+* Simple adding of new grave information to db
+* Searching of the entire database and adding to a user's own collection
+* Visit Planning
+
+## Database Diagram
+![img.png](doc/diagram.png)
+
+## Example of views from app
+
+### Login
+![img.png](doc/login.png)
+
+### Registration
+![img_1.png](doc/registration.png)
+
+### Searching
+![img.png](doc/searching.png)
+
+### Adding to db
+![img.png](doc/relativeAdding.png)
+
+### View of user relatives collection
+![img.png](doc/relatives.png)

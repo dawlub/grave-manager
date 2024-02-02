@@ -59,3 +59,7 @@ java -jar -Dspring.profiles.active=local build/libs/backend-*.jar
 ```
 
 Alternatively you can use IDE tools to run application with the appropriate profile.
+
+
+## Screen of Swagger API
+![img.png](../doc/swagger.png)
