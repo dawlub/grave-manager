@@ -2,12 +2,13 @@ package com.dlubera.grave.manager.service.domain.core.relative;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.webjars.NotFoundException;
 
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-class RelativeServiceImpl {
+class RelativeServiceImpl implements RelativeService{
 
     private final RelativeRepository relativeRepository;
 
@@ -17,6 +18,8 @@ class RelativeServiceImpl {
         entity.setGraveId(1L);
         return Relative.from(relativeRepository.save(entity));
     }
+
+
 
     List<Relative> getAllRelatives() {
         return relativeRepository.findAll().stream()
@@ -28,5 +31,15 @@ class RelativeServiceImpl {
         return relativeRepository.findAllByGraveId(graveId).stream()
                 .map(Relative::from)
                 .toList();
+    }
+
+    @Override
+    public Relative getRelativeById(Long id) {
+        return Relative.from(findByIdOrThrowException(id));
+    }
+
+    private RelativeEntity findByIdOrThrowException(Long id) {
+        return relativeRepository.findById(id)
+                .orElseThrow(() -> new NotFoundException("Relative with id=%s not found".formatted(id)));
     }
 }

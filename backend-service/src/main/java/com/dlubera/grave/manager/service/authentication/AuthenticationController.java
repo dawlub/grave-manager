@@ -1,9 +1,11 @@
 package com.dlubera.grave.manager.service.authentication;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
+@Tag(name = "Auth api", description = "Api that allows to signup for registered in the system user")
 @Slf4j
 @RestController()
 @RequiredArgsConstructor
