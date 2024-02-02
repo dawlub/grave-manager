@@ -1,7 +1,6 @@
 package com.dlubera.grave.manager.service.authentication.jwt;
 
-import com.dlubera.grave.manager.service.authentication.jwt.JwtService;
-import com.dlubera.grave.manager.service.user.UserService;
+import com.dlubera.grave.manager.service.domain.core.user.UserService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

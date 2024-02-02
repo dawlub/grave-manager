@@ -1,4 +1,4 @@
-package com.dlubera.grave.manager.service.user;
+package com.dlubera.grave.manager.service.domain.core.relative;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -8,16 +8,14 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.ZonedDateTime;
 
-@Entity
-@Table(name = "\"user\"")
 @Data
-@AllArgsConstructor
+@Entity
 @NoArgsConstructor
-class UserEntity {
-
+@AllArgsConstructor
+@Table(name = "dead")
+class RelativeEntity {
 
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -27,17 +25,23 @@ class UserEntity {
     @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "email_address")
-    private String email;
+    @Column(name = "death_date")
+    private String deathDate;
 
-    @Column(name = "password")
-    private String password;
+    @Column(name = "birth_date")
+    private String birthDate;
+
+    @Column(name = "age")
+    private int age;
+
+    @Column(name = "grave_id")
+    private Long graveId;
 
     @Column(name = "created_at")
     @UpdateTimestamp
     private ZonedDateTime created_at;
 
-    static UserEntity from(User user, String encryptedPassword) {
-        return UserMapper.INSTANCE.toEntity(user, encryptedPassword);
+    static RelativeEntity from(Relative relative) {
+        return RelativeMapper.INSTANCE.toRelativeEntity(relative);
     }
 }

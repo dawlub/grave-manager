@@ -1,6 +1,5 @@
 package com.dlubera.grave.manager.service.authentication.jwt;
 
-import com.dlubera.grave.manager.service.user.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
