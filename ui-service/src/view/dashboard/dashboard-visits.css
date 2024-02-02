@@ -1,0 +1,112 @@
+.visits-header {
+    justify-content: start;
+    text-align: left;
+    color: grey;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: transparent;
+    padding-left: 30px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2em;
+    padding: 2em;
+    overflow: auto;
+}
+
+.relatives>div {
+    background: #EAEBF3 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    height: 450px;
+}
+
+.relatives>div>div>h3 {
+    height: 5%;
+    text-align: center;
+    font: normal normal normal 22px/30px Segoe UI;
+    letter-spacing: 0.72px;
+    color: #0E0B0B
+}
+
+.relatives>div>img {
+    display: grid;
+    place-items: center;
+    width: 142px;
+    height: 137px;
+    background: transparent 0% 0% no-repeat padding-box;
+    box-shadow: inset 0px 3px 6px #0000001C;
+    mix-blend-mode: luminosity;
+    border: 1px solid #707070;
+    border-radius: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.relatives>div>div>h2 {
+    height: 5%;
+    text-align: center;
+    justify-content: center;
+    font: normal normal normal 20px/27px Segoe UI;
+    letter-spacing: 0.72px;
+    color: #0E0B0B
+}
+.relatives>div>div>ul {
+    list-style: none;
+    padding: 0;
+}
+
+.relatives>div>div>ul>li {
+    display: flex;
+    font: normal normal normal 17px/24px Segoe UI;
+    color: #0E0B0B
+}
+
+.relatives>div>div>ul>li>i {
+    width: 30px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+section.relatives-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.relatives-form>form {
+    display: flex;
+    flex-direction: column;
+}
+
+.relative-template {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-searched {
+    color: #FFFFFF;
+    background: #4849B7 0% 0% no-repeat padding-box;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #707070;
+    border-radius: 1.5em;
+}
+
+.add-searched:hover {
+    background-color: lightgray;
+    color: #0E0B0B;
+}

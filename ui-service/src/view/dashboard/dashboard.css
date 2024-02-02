@@ -1,0 +1,165 @@
+body {
+    margin: 0;
+}
+
+.dashboard-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+}
+
+nav {
+    width: 20vw;
+    height: 100%;
+    background: transparent linear-gradient(180deg, #332EDE 0%, #66717B 100%) 0% 0% no-repeat padding-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+main {
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+nav a {
+    justify-content: center;
+}
+nav a>img {
+    width: 90%;
+    margin: 2em 0.8em;
+}
+
+.dashboard-menu a {
+    text-decoration: none;
+    display: inline-block;
+    line-height: 2em;
+}
+
+.dashboard-menu li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10px;
+}
+
+
+.dashboard-menu li a {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 1vw;
+}
+
+.dashboard-menu li i {
+    flex: none;
+    margin-right: 10px;
+}
+
+li i {
+    font-size: 1.5em;
+}
+
+.button {
+    font-size: 1vw;
+    border: 1px solid #FFFFFF;
+    border-radius: 1em;
+    margin-left: 1em;
+    text-align: center;
+    letter-spacing: 0.7px;
+    color: white;
+    padding: 0.2rem;
+    width: 60%;
+}
+
+ul {
+    list-style-type: none;
+    color: white;
+    font: normal normal normal 20px/27px Segoe UI;
+    height: 100%;
+    margin: 0 auto;
+    width: calc(100% - 40px);
+    position: relative;
+    letter-spacing: 0.72px;
+}
+
+li {
+    text-align: left;
+    margin-bottom: 1em;
+}
+
+.fa-solid {
+    font-weight: 900;
+    width: 1em;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 2em;
+    border-bottom: 1px solid gray;
+    flex-direction: row;
+}
+
+.add-relatives {
+    border: 1px solid #707070;
+    border-radius: 1.5em;
+    letter-spacing: 0.1em;
+    text-align: center;
+    justify-content: center;
+    font: normal normal normal 20px/27px Segoe UI;
+    color: #FFFFFF;
+    background: #4849B7 0% 0% no-repeat padding-box;
+    width: 40%;
+    height: 3em;
+}
+
+.add-relatives a {
+    color: #FFFFFF;
+    justify-content: flex-start;
+}
+
+
+.add-relatives a i {
+    padding: 20px;
+}
+
+.search-bar {
+    width: 70%;
+}
+
+.search-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    background: #EAEBF3 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    border-radius: 27px;
+    width: 80%;
+    font: normal normal normal 20px/27px Segoe UI;
+    text-align: center;
+    letter-spacing: 0.72px;
+    color: #707070;
+    margin: 0;
+    box-sizing: border-box;
+    height: 3em;
+}
+
+.search-icon {
+    position: absolute;
+    left: 1em;
+}
+
+@media (max-width: 700px) {
+    .dashboard-menu .button {
+        font-size: 12px; /* Adjust based on your requirements */
+    }
+
+    .dashboard-menu li i {
+        font-size: 1em; /* Adjust based on your requirements */
+    }
+}
