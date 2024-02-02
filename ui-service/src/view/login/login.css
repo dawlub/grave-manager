@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background: transparent linear-gradient(180deg, #150DE9E0 0%, #66717B 100%) 0% 0% no-repeat padding-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo, .login-container, .registration-container {
+    max-width: 50%;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+.login-form, .registration-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 60%;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 41px;
+    opacity: 0.88;
+    margin: auto;
+}
+
+button {
+    border: none;
+    color: white;
+    margin: 1em;
+    max-width: 40%;
+    width: 100%;
+    line-height: 2em;
+    height: auto;
+    padding: 10px 20px;
+    background: #5558AA 0% 0% no-repeat padding-box;
+    border-radius: 26px;
+    opacity: 0.88;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    padding: 1em;
+    margin: 1em;
+    max-width: 50%;
+    width: 100%;
+    letter-spacing: 0px;
+    color: #707070;
+    opacity: 1;
+    border-bottom: 1px solid #707070;
+}
+
+.registration-link {
+    text-align: left;
+    font: normal normal normal 15px/20px Segoe UI;
+    letter-spacing: 0px;
+    color: #707070;
+}
+
+.no-valid {
+    border: 3px solid red;
+    border-radius: 1em;
+    box-shadow: 0 0 0.2em red;
+    outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .logo, .login-container {
+        max-width: 90%;
+    }
+
+    .login-form {
+        max-width: 80%;
+    }
+
+    button, input {
+        max-width: 90%;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .logo, .login-container {
+        max-width: 100%;
+    }
+
+    .login-form {
+        max-width: 100%;
+    }
+
+    button, input {
+        max-width: 100%;
+    }
+
+    .container {
+        padding: 20px;
+    }
+}
