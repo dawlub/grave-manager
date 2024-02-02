@@ -1,4 +1,4 @@
-package com.dlubera.grave.manager.service.user;
+package com.dlubera.grave.manager.service.domain.core.user;
 
 
 import com.dlubera.grave.manager.service.exception.GraveManagerServiceException;

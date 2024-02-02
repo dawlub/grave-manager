@@ -16,7 +16,7 @@
             <column name="user_id" type="INTEGER">
                 <constraints foreignKeyName="fk_user" references="user(id)" nullable="false" />
             </column>
-            <column name="dead_id" type="INTEGER" autoIncrement="true">
+            <column name="dead_id" type="INTEGER">
                 <constraints foreignKeyName="true" references="dead(id)" nullable="false"/>
             </column>
             <column name="visit_date" type="DATE">

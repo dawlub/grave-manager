@@ -1,7 +1,7 @@
 package com.dlubera.grave.manager.service.authentication;
 
 import com.dlubera.grave.manager.service.authentication.jwt.JwtService;
-import com.dlubera.grave.manager.service.user.UserService;
+import com.dlubera.grave.manager.service.domain.core.user.UserService;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;

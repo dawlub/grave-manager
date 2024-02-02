@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="1706400226" author="dawlub">
+        <sql>
+            INSERT INTO cemetery (name, street, city, postal_code, created_at)
+                VALUES('Cmentarz Parafialny w Cmolasie', 'Marszałkowska', 'Cmolas', '36-105', current_timestamp);
+        </sql>
+    </changeSet>
+</databaseChangeLog>

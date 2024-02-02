@@ -1,4 +1,4 @@
-package com.dlubera.grave.manager.service.user;
+package com.dlubera.grave.manager.service.domain.core.user;
 
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;

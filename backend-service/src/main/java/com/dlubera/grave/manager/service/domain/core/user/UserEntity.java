@@ -1,4 +1,4 @@
-package com.dlubera.grave.manager.service.user;
+package com.dlubera.grave.manager.service.domain.core.user;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -14,7 +14,6 @@ import java.time.ZonedDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 class UserEntity {
-
 
     @Id
     @Column(name = "id")

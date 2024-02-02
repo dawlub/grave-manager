@@ -2,7 +2,7 @@ package com.dlubera.grave.manager.service.authentication.jwt;
 
 import static org.springframework.security.config.http.SessionCreationPolicy.STATELESS;
 
-import com.dlubera.grave.manager.service.user.UserService;
+import com.dlubera.grave.manager.service.domain.core.user.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
